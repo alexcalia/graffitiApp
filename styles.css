@@ -1,0 +1,27 @@
+.wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.canvas {
+  border: 2px solid black;
+  margin-top: 100px;
+}
+
+.canvas:hover {
+  cursor: crosshair;
+}
+
+.options {
+  display: flex;
+  margin-top: 15px;
+}
+
+.backgroundList {
+  margin-left: 10px;
+}
+
+.clearBtn {
+  margin-left: 10px;
+}
