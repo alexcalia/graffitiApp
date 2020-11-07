@@ -13,10 +13,15 @@
       <input class="sizeSlider" type="range" min="5" max="50" value="10" id="sizeSlider" autocomplete="off">
       <button class="clearBtn" id="clearBtn">Clear</button>
       <select class="backgroundList" id="backgroundList" autocomplete="off">
-        <option value="brick">Brick Wall</option>
-        <option value="boxCar">Boxcar</option>
+        <option value="./assets/brick.jpg">Brick Wall</option>
+        <option value="./assets/boxCar.jpg">Boxcar</option>
       </select>
       <button class="backgroundAccept" id="backgroundAccept">Change</button>
+      <select class="paintTip" id="paintTip" autocomplete="off">
+        <option value="round">Spray</option>
+        <option value="square">Brush</option>
+      </select>
+      <a class="saveImage" id="saveImage" download="image.png"><button type="button" onClick="app.saveImage()">Save</button></a>
     </div>
   </div>
   <script src="app.js"></script>

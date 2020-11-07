@@ -7,7 +7,8 @@
 .canvas {
   border: 2px solid black;
   margin-top: 100px;
-  background: url(./assets/brick.jpg);
+  /* background-image: url(./assets/brick.jpg);
+  background-size: cover; */
 }
 
 .canvas:hover {
@@ -24,5 +25,13 @@
 }
 
 .clearBtn {
+  margin-left: 10px;
+}
+
+.paintTip {
+  margin-left: 10px;
+}
+
+.saveImage {
   margin-left: 10px;
 }

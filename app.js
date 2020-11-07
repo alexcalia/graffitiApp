@@ -4,22 +4,32 @@ const app = {};
 app.canvas = document.querySelector('#canvas');
 app.ctx = app.canvas.getContext('2d');
 
+// Canvas size
+app.canvas.height = 900;
+app.canvas.width = 1500;
+
 // Buttons
 app.sizeChanger = document.getElementById('sizeSlider');
 app.clearBtn = document.getElementById('clearBtn');
 app.backgroundChngBtn = document.getElementById('backgroundAccept');
+app.saveButton = document.getElementById('saveImage');
 
 // Selects
 app.backgroundSelect = document.getElementById('backgroundList');
+app.paintTip = document.getElementById('paintTip');
 
-// Canvas size
-app.canvas.height = 900;
-app.canvas.width = 1500;
+// Add background to canvas
+app.background = new Image;
+app.background.src = app.backgroundSelect.value;
+app.background.onload = function(){
+    app.ctx.drawImage(app.background,0,0);   
+}
 
 // Variables
 app.painting = false;
 app.color = 'black';
 app.width = 10;
+app.lineCap = 'round'
 
 // Start of drawing method
 app.startPosition = function(e) {
@@ -37,9 +47,8 @@ app.finishPosition = function() {
 app.draw = function(e) {
   if(!app.painting) return;
   app.ctx.lineWidth = app.width;
-  app.ctx.lineCap = 'round';
+  app.ctx.lineCap = `${app.paintTip.value}`;
   app.ctx.strokeStyle = app.color;
-
   app.ctx.lineTo(e.offsetX, e.offsetY);
   app.ctx.stroke();
   app.ctx.beginPath();
@@ -51,14 +60,29 @@ app.changeSize = function() {
   app.width = app.sizeChanger.value;
 }
 
+// Change type of paint tool
+app.changeTip = function() {
+  app.lineCap = app.paintTip.value
+}
+
 // Change the background of the canvas
 app.changeBackground = function() {
-  app.canvas.style.background = `url(./assets/${app.backgroundSelect.value}.jpg)`
+  app.clearCanvas();
+  app.background.src = app.backgroundSelect.value;
+  app.background.onload = function(){
+    app.ctx.drawImage(app.background,0,0);   
+  }
 }
 
 // Clear the canvas
 app.clearCanvas = function() {
   app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
+}
+
+// Save image
+app.saveImage = function() {
+  const url = app.canvas.toDataURL('image/png').replace(/^data:image\/png/,'data:application/octet-stream');
+  app.saveButton.setAttribute('href', url);
 }
 
 // Event Listeners
