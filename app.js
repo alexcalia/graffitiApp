@@ -7,6 +7,10 @@ app.ctx = app.canvas.getContext('2d');
 // Buttons
 app.sizeChanger = document.getElementById('sizeSlider');
 app.clearBtn = document.getElementById('clearBtn');
+app.backgroundChngBtn = document.getElementById('backgroundAccept');
+
+// Selects
+app.backgroundSelect = document.getElementById('backgroundList');
 
 // Canvas size
 app.canvas.height = 900;
@@ -47,6 +51,11 @@ app.changeSize = function() {
   app.width = app.sizeChanger.value;
 }
 
+// Change the background of the canvas
+app.changeBackground = function() {
+  app.canvas.style.background = `url(./assets/${app.backgroundSelect.value}.jpg)`
+}
+
 // Clear the canvas
 app.clearCanvas = function() {
   app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
@@ -59,6 +68,7 @@ app.eventListeners = function() {
   app.canvas.addEventListener('mousemove', app.draw);
   app.sizeChanger.addEventListener('input', app.changeSize);
   app.clearBtn.addEventListener('click', app.clearCanvas);
+  app.backgroundChngBtn.addEventListener('click', app.changeBackground);
 }
 
 // Document ready
