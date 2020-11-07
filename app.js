@@ -19,10 +19,12 @@ app.backgroundSelect = document.getElementById('backgroundList');
 app.paintTip = document.getElementById('paintTip');
 
 // Add background to canvas
-app.background = new Image;
-app.background.src = app.backgroundSelect.value;
-app.background.onload = function(){
+app.setBackground = function() {
+  app.background = new Image;
+  app.background.src = app.backgroundSelect.value;
+  app.background.onload = function(){
     app.ctx.drawImage(app.background, 0, 0, app.canvas.width, app.canvas.height);   
+  }
 }
 
 // Variables
@@ -65,22 +67,10 @@ app.changeTip = function() {
   app.lineCap = app.paintTip.value
 }
 
-// Clear the canvas and change the background
-app.changeBackground = function() {
-  app.clearCanvas();
-  app.background.src = app.backgroundSelect.value;
-  app.background.onload = function(){
-    app.ctx.drawImage(app.background, 0, 0, app.canvas.width, app.canvas.height);   
-  }
-}
-
 // Clear the canvas
 app.clearCanvas = function() {
   app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
-  app.background.src = app.backgroundSelect.value;
-  app.background.onload = function(){
-    app.ctx.drawImage(app.background, 0, 0, app.canvas.width, app.canvas.height);   
-  }
+  app.setBackground();
 }
 
 // Save image
@@ -102,4 +92,5 @@ app.eventListeners = function() {
 // Document ready
 window.addEventListener("load", () => {
   app.eventListeners();
+  app.setBackground();
 });
