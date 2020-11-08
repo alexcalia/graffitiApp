@@ -55,7 +55,11 @@ app.draw = function(e) {
   app.ctx.lineWidth = app.width;
   app.ctx.lineCap = `${app.paintTip.value}`;
   app.ctx.strokeStyle = app.color;
+  app.ctx.shadowColor= app.color;
   app.ctx.lineTo(e.offsetX, e.offsetY);
+  app.ctx.shadowOffsetX=0;
+  app.ctx.shadowOffsetY=0;
+  app.ctx.shadowBlur=10;
   app.ctx.stroke();
   app.ctx.beginPath();
   app.ctx.moveTo(e.offsetX, e.offsetY);
@@ -82,6 +86,7 @@ app.saveImage = function() {
 app.eventListeners = function() {
   app.canvas.addEventListener('mousedown', app.startPosition);
   app.canvas.addEventListener('mouseup', app.finishPosition);
+  app.canvas.addEventListener('mouseleave', app.finishPosition);
   app.canvas.addEventListener('mousemove', app.draw);
   app.sizeChanger.addEventListener('input', app.changeSize);
   app.backgroundChngBtn.addEventListener('click', app.clearCanvas);
