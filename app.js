@@ -8,13 +8,18 @@ app.ctx = app.canvas.getContext('2d');
 app.canvas.height = 900;
 app.canvas.width = 1500;
 
+// Color picker
+app.colorPicker = new iro.ColorPicker('#picker', {
+  width: 200,
+});
+
 // Selects
 app.backgroundSelect = document.getElementById('backgroundList');
 app.paintTip = document.getElementById('paintTip');
 
 // Variables
 app.painting = false;
-app.color = 'black';
+app.color = app.colorPicker.color.hexString;
 app.width = 10;
 app.lineCap = 'round'
 
@@ -26,7 +31,6 @@ app.saveButton = document.getElementById('saveImage');
 // Add background to canvas
 app.setBackground = function() {
   app.background = new Image;
-  // app.background.setAttribute('crossorigin', 'anonymous');
   app.background.src = app.backgroundSelect.value;
   app.background.onload = function(){
     app.ctx.drawImage(app.background, 0, 0, app.canvas.width, app.canvas.height);   
@@ -62,11 +66,6 @@ app.changeSize = function() {
   app.width = app.sizeChanger.value;
 }
 
-// Change type of paint tool
-app.changeTip = function() {
-  app.lineCap = app.paintTip.value
-}
-
 // Clear the canvas
 app.clearCanvas = function() {
   app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
@@ -86,6 +85,9 @@ app.eventListeners = function() {
   app.canvas.addEventListener('mousemove', app.draw);
   app.sizeChanger.addEventListener('input', app.changeSize);
   app.backgroundChngBtn.addEventListener('click', app.clearCanvas);
+  app.colorPicker.on('color:change', () => {
+    app.color = app.colorPicker.color.hexString;
+  })
 }
 
 // Document ready
