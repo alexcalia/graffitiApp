@@ -8,30 +8,30 @@ app.ctx = app.canvas.getContext('2d');
 app.canvas.height = 900;
 app.canvas.width = 1500;
 
-// Buttons
-app.sizeChanger = document.getElementById('sizeSlider');
-app.clearBtn = document.getElementById('clearBtn');
-app.backgroundChngBtn = document.getElementById('backgroundAccept');
-app.saveButton = document.getElementById('saveImage');
-
 // Selects
 app.backgroundSelect = document.getElementById('backgroundList');
 app.paintTip = document.getElementById('paintTip');
-
-// Add background to canvas
-app.setBackground = function() {
-  app.background = new Image;
-  app.background.src = app.backgroundSelect.value;
-  app.background.onload = function(){
-    app.ctx.drawImage(app.background, 0, 0, app.canvas.width, app.canvas.height);   
-  }
-}
 
 // Variables
 app.painting = false;
 app.color = 'black';
 app.width = 10;
 app.lineCap = 'round'
+
+// Buttons
+app.sizeChanger = document.getElementById('sizeSlider');
+app.backgroundChngBtn = document.getElementById('backgroundAccept');
+app.saveButton = document.getElementById('saveImage');
+
+// Add background to canvas
+app.setBackground = function() {
+  app.background = new Image;
+  // app.background.setAttribute('crossorigin', 'anonymous');
+  app.background.src = app.backgroundSelect.value;
+  app.background.onload = function(){
+    app.ctx.drawImage(app.background, 0, 0, app.canvas.width, app.canvas.height);   
+  }
+}
 
 // Start of drawing method
 app.startPosition = function(e) {
@@ -85,7 +85,6 @@ app.eventListeners = function() {
   app.canvas.addEventListener('mouseup', app.finishPosition);
   app.canvas.addEventListener('mousemove', app.draw);
   app.sizeChanger.addEventListener('input', app.changeSize);
-  app.clearBtn.addEventListener('click', app.clearCanvas);
   app.backgroundChngBtn.addEventListener('click', app.clearCanvas);
 }
 
