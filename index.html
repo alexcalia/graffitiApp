@@ -9,13 +9,18 @@
 </head>
 <body>
   <div class="backgroundBlur" id="backgroundBlur"></div>
-  <div class="savePopup" id="savePopup">
-    <h2>GraffitiGram</h2>
-    <figure>
-      <img id="canvasImage" src="" alt="Picture of the canvas">
-      <a class="saveImage" id="saveImage" download="image.png"><button type="button">Save</button></a>
-    </figure>
-    <button type="button" onClick="app.closeSavePopup()">X</button>
+  <div class="savePopupContainer">
+    <div class="savePopup" id="savePopup">
+      <h2>GraffitiGram</h2>
+      <button type="button" onClick="app.closeSavePopup()">X</button>
+      <div class="sapePopupContainer">
+        <div class="canvasImageContainer">
+          <img id="canvasImage" src="" alt="Picture of the canvas">
+          <a class="saveImage" id="saveImage" download="image.png"><button type="button">Save</button></a>
+        </div>
+        <div class="optionsContainer"></div>
+      </div>
+    </div>
   </div>
   <div class="wrapper">
     <canvas class="canvas" id="canvas"></canvas>
@@ -30,7 +35,7 @@
         <option value="round">Spray</option>
         <option value="square">Brush</option>
       </select>
-      <a class="saveImage" id="saveImage" download="image.png"><button type="button" onClick="app.openSavePopup()">Save</button></a>
+      <button type="button" class="savePopupButton" onClick="app.openSavePopup()">Save</button>
     </div>
     <div id="picker" class="picker"></div>
   </div>

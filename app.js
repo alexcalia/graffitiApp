@@ -62,9 +62,13 @@ app.draw = function(e) {
   app.ctx.strokeStyle = app.color;
   app.ctx.shadowColor= app.color;
   app.ctx.lineTo(e.offsetX, e.offsetY);
-  app.ctx.shadowOffsetX=0;
-  app.ctx.shadowOffsetY=0;
-  app.ctx.shadowBlur=10;
+  if (app.ctx.lineCap === 'round') {
+    app.ctx.shadowOffsetX = 0;
+    app.ctx.shadowOffsetY = 0;
+    app.ctx.shadowBlur = 10;
+  } else {
+    app.ctx.shadowBlur = 0;
+  }
   app.ctx.stroke();
   app.ctx.beginPath();
   app.ctx.moveTo(e.offsetX, e.offsetY);
