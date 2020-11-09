@@ -89,14 +89,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   display: flex;
 }
 
-.canvasImageContainer {
-  width: 66%;
-}
-
-.optionsContainer {
-  width: 33%;
-}
-
 .canvasImageContainer img {
   width: 100%
 }

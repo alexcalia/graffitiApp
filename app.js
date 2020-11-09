@@ -2,11 +2,15 @@ const app = {};
 
 // Canvas setup
 app.canvas = document.querySelector('#canvas');
+app.canvasTwo = document.querySelector('#canvasTwo');
 app.ctx = app.canvas.getContext('2d');
+app.ctxTwo = app.canvasTwo.getContext('2d');
 
 // Canvas size
 app.canvas.height = 900;
 app.canvas.width = 1500;
+app.canvasTwo.height = 360;
+app.canvasTwo.width = 600;
 
 // Color picker
 app.colorPicker = new iro.ColorPicker('#picker', {
@@ -31,7 +35,6 @@ app.saveButton = document.getElementById('saveImage');
 // Save Popup and Blur
 app.backgroundBlur = document.getElementById('backgroundBlur');
 app.savePopup = document.getElementById('savePopup');
-app.canvasImage = document.getElementById('canvasImage');
 
 // Add background to canvas
 app.setBackground = function() {
@@ -89,10 +92,13 @@ app.clearCanvas = function() {
 app.openSavePopup = function() {
   app.backgroundBlur.className = "backgroundBlur active";
   app.savePopup.className = "savePopup active";
-  const url = app.canvas.toDataURL('image/png').replace(/^data:image\/png/,'data:application/octet-stream');
-  app.canvasImage.src = url;
-  app.saveButton.setAttribute('href', url);
+  app.ctxTwo.drawImage(app.canvas, 0, 0, app.canvasTwo.width, app.canvasTwo.height);
 };
+
+app.downloadImage = function() {
+  const url = app.canvasTwo.toDataURL('image/png').replace("image/png", "image/octet-stream");
+  app.saveButton.setAttribute('href', url);
+}
 
 app.closeSavePopup = function() {
   app.backgroundBlur.className = "backgroundBlur";

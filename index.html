@@ -14,11 +14,9 @@
       <h2 class="popupHeader">GraffitiGram</h2>
       <button type="button" class="closeButton" onClick="app.closeSavePopup()">X</button>
       <div class="sapePopupInner">
-        <div class="canvasImageContainer">
-          <img id="canvasImage" src="" alt="Picture of the canvas">
-        </div>
+        <canvas id="canvasTwo" class="canvasTwo"></canvas>
         <div class="optionsContainer">
-          <a class="saveImage" id="saveImage" download="image.png"><button type="button">Save</button></a>
+          <a class="saveImage" id="saveImage" download="image.png"><button type="button" onClick="app.downloadImage()">Save</button></a>
         </div>
       </div>
     </div>
