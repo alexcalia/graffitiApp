@@ -8,6 +8,15 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="backgroundBlur" id="backgroundBlur"></div>
+  <div class="savePopup" id="savePopup">
+    <h2>GraffitiGram</h2>
+    <figure>
+      <img id="canvasImage" src="" alt="Picture of the canvas">
+      <a class="saveImage" id="saveImage" download="image.png"><button type="button">Save</button></a>
+    </figure>
+    <button type="button" onClick="app.closeSavePopup()">X</button>
+  </div>
   <div class="wrapper">
     <canvas class="canvas" id="canvas"></canvas>
     <div class="options">
@@ -21,7 +30,7 @@
         <option value="round">Spray</option>
         <option value="square">Brush</option>
       </select>
-      <a class="saveImage" id="saveImage" download="image.png"><button type="button" onClick="app.saveImage()">Save</button></a>
+      <a class="saveImage" id="saveImage" download="image.png"><button type="button" onClick="app.openSavePopup()">Save</button></a>
     </div>
     <div id="picker" class="picker"></div>
   </div>

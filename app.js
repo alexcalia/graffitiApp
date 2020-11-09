@@ -28,6 +28,11 @@ app.sizeChanger = document.getElementById('sizeSlider');
 app.backgroundChngBtn = document.getElementById('backgroundAccept');
 app.saveButton = document.getElementById('saveImage');
 
+// Save Popup and Blur
+app.backgroundBlur = document.getElementById('backgroundBlur');
+app.savePopup = document.getElementById('savePopup');
+app.canvasImage = document.getElementById('canvasImage');
+
 // Add background to canvas
 app.setBackground = function() {
   app.background = new Image;
@@ -35,19 +40,19 @@ app.setBackground = function() {
   app.background.onload = function(){
     app.ctx.drawImage(app.background, 0, 0, app.canvas.width, app.canvas.height);   
   }
-}
+};
 
 // Start of drawing method
 app.startPosition = function(e) {
   app.painting = true;
   app.draw(e);
-}
+};
 
 // End of drawing method
 app.finishPosition = function() {
   app.painting = false;
   app.ctx.beginPath();
-}
+};
 
 // Draw method
 app.draw = function(e) {
@@ -63,24 +68,32 @@ app.draw = function(e) {
   app.ctx.stroke();
   app.ctx.beginPath();
   app.ctx.moveTo(e.offsetX, e.offsetY);
-}
+};
 
 // Change size of the draw tool
 app.changeSize = function() {
   app.width = app.sizeChanger.value;
-}
+};
 
 // Clear the canvas
 app.clearCanvas = function() {
   app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
   app.setBackground();
-}
+};
 
 // Save image
-app.saveImage = function() {
+app.openSavePopup = function() {
+  app.backgroundBlur.className = "backgroundBlur active";
+  app.savePopup.className = "savePopup active";
   const url = app.canvas.toDataURL('image/png').replace(/^data:image\/png/,'data:application/octet-stream');
+  app.canvasImage.src = url;
   app.saveButton.setAttribute('href', url);
-}
+};
+
+app.closeSavePopup = function() {
+  app.backgroundBlur.className = "backgroundBlur";
+  app.savePopup.className = "savePopup";
+};
 
 // Event Listeners
 app.eventListeners = function() {
@@ -93,7 +106,7 @@ app.eventListeners = function() {
   app.colorPicker.on('color:change', () => {
     app.color = app.colorPicker.color.hexString;
   })
-}
+};
 
 // Document ready
 window.addEventListener("load", () => {
