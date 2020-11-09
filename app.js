@@ -20,6 +20,7 @@ app.colorPicker = new iro.ColorPicker('#picker', {
 // Selects
 app.backgroundSelect = document.getElementById('backgroundList');
 app.paintTip = document.getElementById('paintTip');
+app.filterList = document.getElementById('filterList');
 
 // Variables
 app.painting = false;
@@ -88,13 +89,21 @@ app.clearCanvas = function() {
   app.setBackground();
 };
 
-// Save image
+// Open the save popup
 app.openSavePopup = function() {
   app.backgroundBlur.className = "backgroundBlur active";
   app.savePopup.className = "savePopup active";
   app.ctxTwo.drawImage(app.canvas, 0, 0, app.canvasTwo.width, app.canvasTwo.height);
 };
 
+// Apply filter
+app.applyFilter = function() {
+  app.ctxTwo.clearRect(0, 0, app.canvasTwo.width, app.canvasTwo.length);
+  app.ctxTwo.filter = app.filterList.value;
+  app.ctxTwo.drawImage(app.canvas, 0, 0, app.canvasTwo.width, app.canvasTwo.height);
+}
+
+// Download the image
 app.downloadImage = function() {
   const url = app.canvasTwo.toDataURL('image/png').replace("image/png", "image/octet-stream");
   app.saveButton.setAttribute('href', url);
