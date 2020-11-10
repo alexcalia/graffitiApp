@@ -23,6 +23,9 @@ app.backgroundSelect = document.getElementById('backgroundList');
 app.paintTip = document.getElementById('paintTip');
 app.filterList = document.getElementById('filterList');
 
+// Paint size span
+app.paintSizeSpan = document.getElementById('paintSize');
+
 // Variables
 app.painting = false;
 app.color = app.colorPicker.color.hexString;
@@ -82,6 +85,7 @@ app.draw = function(e) {
 // Change size of the draw tool
 app.changeSize = function() {
   app.width = app.sizeChanger.value;
+  app.paintSizeSpan.innerHTML = `${app.sizeChanger.value}`
 };
 
 // Clear the canvas

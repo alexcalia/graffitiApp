@@ -31,14 +31,14 @@
   </div>
   <div class="wrapper">
     <canvas class="canvas" id="canvas"></canvas>
-    <div class="options">
+    <aside class="options">
       <h2>Options</h2>
       <section class="colorSection container">
         <h3>Color</h3>
         <div id="picker" class="picker"></div>
       </section>
       <section class="sizeContainer container">
-        <label for="sizeSlider">Paint Size</label>
+        <label for="sizeSlider">Paint Size: <span id="paintSize" class="paintSize">10</span>px</label>
         <input class="sizeSlider" type="range" min="5" max="50" value="10" id="sizeSlider" autocomplete="off">
       </section>
       <section class="canvasSelectContainer container">
@@ -57,7 +57,7 @@
         </select>
       </section>
       <button type="button" class="savePopupButton" onClick="app.openSavePopup()">Save</button>
-    </div>
+    </aside>
   </div>
   <script src="app.js"></script>
 </body>
