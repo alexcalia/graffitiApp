@@ -19,10 +19,10 @@
           <a class="saveImage" id="saveImage" download="image.png"><button type="button" onClick="app.downloadImage()">Save</button></a>
           <select id="filterList" class="filterList">
             <option value="none">None</option>
-            <option value="blur(5px)">Filter 1</option>
-            <option>Filter 2</option>
-            <option>Filter 3</option>
-            <option>Filter 4</option>
+            <option value="blur(2px)">Blur</option>
+            <option value="brightness(1.25) contrast(.85) grayscale(1)">Grayscale</option>
+            <option value="sepia(.15) brightness(1.2)">Poprocket</option>
+            <option value="sepia(.35) contrast(.8) brightness(1.25) saturate(1.4)">Walden</option>
           </select>
           <button class="saveFilter" id="saveFilter" onClick="app.applyFilter()">Apply</button>
         </div>

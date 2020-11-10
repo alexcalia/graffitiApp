@@ -107,11 +107,16 @@ app.applyFilter = function() {
 app.downloadImage = function() {
   const url = app.canvasTwo.toDataURL('image/png').replace("image/png", "image/octet-stream");
   app.saveButton.setAttribute('href', url);
+  app.ctxTwo.filter = "none";
+  app.filterList.value = "none";
 }
 
+// Close popup
 app.closeSavePopup = function() {
   app.backgroundBlur.className = "backgroundBlur";
   app.savePopup.className = "savePopup";
+  app.ctxTwo.filter = "none";
+  app.filterList.value = "none";
 };
 
 // Event Listeners
