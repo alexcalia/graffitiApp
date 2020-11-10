@@ -10,12 +10,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   max-width: 1500px;
   margin: 0 auto;
   width: 90%;
+  display: flex;
+  padding-top: 100px;
 }
 
 /* CANVAS */
 .canvas {
   border: 2px solid black;
-  margin-top: 100px;
 }
 
 .canvas:hover {
@@ -24,8 +25,14 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* OPTIONS BAR */
 .options {
+  padding-left: 20px;
   display: flex;
-  margin-top: 15px;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
 .backgroundList {

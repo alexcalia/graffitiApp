@@ -7,14 +7,15 @@ app.ctx = app.canvas.getContext('2d');
 app.ctxTwo = app.canvasTwo.getContext('2d');
 
 // Canvas size
-app.canvas.height = 900;
-app.canvas.width = 1500;
+app.canvas.height = 700;
+app.canvas.width = 1200;
 app.canvasTwo.height = 360;
 app.canvasTwo.width = 600;
 
 // Color picker
 app.colorPicker = new iro.ColorPicker('#picker', {
-  width: 200,
+  width: 150,
+  sliderSize: 25
 });
 
 // Selects

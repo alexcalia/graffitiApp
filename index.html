@@ -32,19 +32,32 @@
   <div class="wrapper">
     <canvas class="canvas" id="canvas"></canvas>
     <div class="options">
-      <input class="sizeSlider" type="range" min="5" max="50" value="10" id="sizeSlider" autocomplete="off">
-      <select class="backgroundList" id="backgroundList" autocomplete="off">
-        <option value="./assets/brick.jpg">Brick Wall</option>
-        <option value="./assets/boxCar.jpg">Boxcar</option>
-      </select>
-      <button class="backgroundAccept" id="backgroundAccept">Clear/Change</button>
-      <select class="paintTip" id="paintTip" autocomplete="off">
-        <option value="round">Spray</option>
-        <option value="square">Brush</option>
-      </select>
+      <h2>Options</h2>
+      <section class="colorSection container">
+        <h3>Color</h3>
+        <div id="picker" class="picker"></div>
+      </section>
+      <section class="sizeContainer container">
+        <label for="sizeSlider">Paint Size</label>
+        <input class="sizeSlider" type="range" min="5" max="50" value="10" id="sizeSlider" autocomplete="off">
+      </section>
+      <section class="canvasSelectContainer container">
+        <label for="backgroundList">Canvas</label>
+        <select class="backgroundList" id="backgroundList" autocomplete="off">
+          <option value="./assets/brick.jpg">Brick Wall</option>
+          <option value="./assets/boxCar.jpg">Boxcar</option>
+        </select>
+        <button class="backgroundAccept" id="backgroundAccept">Clear/Change</button>
+      </section>
+      <section class="paintTipContainer container">
+        <label for="paintTip">Paint Style</label>
+        <select class="paintTip" id="paintTip" autocomplete="off">
+          <option value="round">Spray</option>
+          <option value="square">Brush</option>
+        </select>
+      </section>
       <button type="button" class="savePopupButton" onClick="app.openSavePopup()">Save</button>
     </div>
-    <div id="picker" class="picker"></div>
   </div>
   <script src="app.js"></script>
 </body>
