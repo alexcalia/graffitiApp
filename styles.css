@@ -126,7 +126,7 @@ aside {
 
 .savePopup {
   position: relative;
-  width: 50%;
+  width: 43%;
   margin: 0 auto;
   padding: 20px;
   margin-top: 200px;
@@ -140,6 +140,11 @@ aside {
   margin-bottom: 15px;
 }
 
+.canvasTwo {
+  border: 2px solid #5C0200;
+  border-radius: 5px;
+}
+
 .closeButton {
   position: absolute;
   top: 5px;
@@ -148,6 +153,22 @@ aside {
 
 .savePopupInner {
   display: flex;
+}
+
+.optionsContainer {
+  width: calc(100% - 606px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.saveFilter {
+  width: 65px;
+  margin: 7px 0;
+}
+
+.saveImage {
+  margin-top: 50px;
 }
 
 .canvasImageContainer img {
