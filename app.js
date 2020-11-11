@@ -15,7 +15,9 @@ app.canvasTwo.width = 600;
 // Color picker
 app.colorPicker = new iro.ColorPicker('#picker', {
   width: 150,
-  sliderSize: 25
+  sliderSize: 25,
+  borderWidth: 2,
+  borderColor: `#5C0200`
 });
 
 // Selects

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <title>Document</title>
 </head>
@@ -11,7 +12,7 @@
   <div class="backgroundBlur" id="backgroundBlur"></div>
   <div class="savePopupContainer">
     <div class="savePopup" id="savePopup">
-      <h2 class="popupHeader">GraffitiGram</h2>
+      <h2 class="popupHeader">'Gram It</h2>
       <button type="button" class="closeButton" onClick="app.closeSavePopup()">X</button>
       <div class="sapePopupInner">
         <canvas id="canvasTwo" class="canvasTwo"></canvas>
@@ -29,6 +30,7 @@
       </div>
     </div>
   </div>
+  <h1>GraffitiGram</h1>
   <div class="wrapper">
     <canvas class="canvas" id="canvas"></canvas>
     <aside class="options">
@@ -56,7 +58,7 @@
           <option value="square">Brush</option>
         </select>
       </section>
-      <button type="button" class="savePopupButton" onClick="app.openSavePopup()">Save</button>
+      <button type="button" class="savePopupButton" onClick="app.openSavePopup()">'Gram It</button>
     </aside>
   </div>
   <script src="app.js"></script>

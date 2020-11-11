@@ -7,20 +7,33 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
 /* GENBRAL STYLINGS */
+
+body,
+.savePopup {
+  background-color: #FFE19C;
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 20px;
+  color: #5C0200;
+}
+
 .wrapper {
-  max-width: 1500px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 90%;
   display: flex;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
-.container {
-  margin-top: 20px;
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Sedgwick Ave Display', cursive;
+  margin-top: 50px;
 }
 
 h2 {
   text-align: center;
+  font-size: 30px;
 }
 
 h3 {
@@ -34,16 +47,27 @@ label {
 }
 
 button {
-  width: 100px;
+  border: 3px solid #5C0200;
+  border-radius: 5px;
+  padding: 5px;
+  color: #5C0200;
+  text-transform: uppercase;
+  font-size: 13px;
+  background-color: #FFC07D;
+  font-weight: 600;
 }
 
 select{
   width: 100px;
+  font-size: 16px;
+  border: 2px solid #5C0200;
+  border-radius: 3px;
 }
 
 /* CANVAS */
 .canvas {
-  border: 2px solid black;
+  border: 5px solid #5C0200;
+  border-radius: 10px;
 }
 
 .canvas:hover {
@@ -51,8 +75,11 @@ select{
 }
 
 /* OPTIONS BAR */
+aside {
+  width: calc(100% - 1210px);
+}
+
 .options {
-  padding-left: 20px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -62,15 +89,17 @@ select{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .backgroundAccept {
   width: 120px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .savePopupButton {
-  width: 70px;
+  width: 90px;
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -99,9 +128,10 @@ select{
   position: relative;
   width: 50%;
   margin: 0 auto;
-  background: white;
   padding: 20px;
   margin-top: 200px;
+  border: 5px solid #5C0200;
+  border-radius: 10px;
 }
 
 .popupHeader {
