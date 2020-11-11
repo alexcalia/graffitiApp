@@ -55,10 +55,16 @@ button {
   font-size: 13px;
   background-color: #FFC07D;
   font-weight: 600;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  color: white;
+  background-color: #5C0200
 }
 
 select{
-  width: 100px;
+  width: 111px;
   font-size: 16px;
   border: 2px solid #5C0200;
   border-radius: 3px;
@@ -177,4 +183,43 @@ aside {
 
 .active {
   visibility: visible;
+}
+
+/* FOOTER */
+footer {
+  background: #5C0200;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-family: sans-serif;
+}
+
+footer a {
+  margin-top: 0;
+  color: white;
+  transition-duration: 0.2s;
+}
+
+footer .wrapper {
+  display: flex;
+  padding: 0;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #FFC07D;
+}
+
+.socials {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-left: 50px;
 }

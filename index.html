@@ -3,65 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <title>Document</title>
 </head>
 <body>
-  <div class="backgroundBlur" id="backgroundBlur"></div>
-  <div class="savePopupContainer">
-    <div class="savePopup" id="savePopup">
-      <h2 class="popupHeader">'Gram It</h2>
-      <button type="button" class="closeButton" onClick="app.closeSavePopup()">X</button>
-      <div class="savePopupInner">
-        <canvas id="canvasTwo" class="canvasTwo"></canvas>
-        <div class="optionsContainer">
-          <label for="filterList">Filters</label>
-          <select id="filterList" class="filterList">
-            <option value="none">None</option>
-            <option value="blur(2px)">Blur</option>
-            <option value="brightness(1.25) contrast(.85) grayscale(1)">Grayscale</option>
-            <option value="sepia(.15) brightness(1.2)">Poprocket</option>
-            <option value="sepia(.35) contrast(.8) brightness(1.25) saturate(1.4)">Walden</option>
-          </select>
-          <button class="saveFilter" id="saveFilter" onClick="app.applyFilter()">Apply</button>
-          <a class="saveImage" id="saveImage" download="image.png"><button type="button" onClick="app.downloadImage()">Download</button></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h1>GraffitiGram</h1>
-  <div class="wrapper">
-    <canvas class="canvas" id="canvas"></canvas>
-    <aside class="options">
-      <h2>Options</h2>
-      <section class="colorSection container">
-        <h3>Color</h3>
-        <div id="picker" class="picker"></div>
-      </section>
-      <section class="sizeContainer container">
-        <label for="sizeSlider">Paint Size: <span id="paintSize" class="paintSize">10</span>px</label>
-        <input class="sizeSlider" type="range" min="5" max="50" value="10" id="sizeSlider" autocomplete="off">
-      </section>
-      <section class="canvasSelectContainer container">
-        <label for="backgroundList">Canvas</label>
-        <select class="backgroundList" id="backgroundList" autocomplete="off">
-          <option value="./assets/brick.jpg">Brick Wall</option>
-          <option value="./assets/boxCar.jpg">Boxcar</option>
-        </select>
-        <button class="backgroundAccept" id="backgroundAccept">Clear/Change</button>
-      </section>
-      <section class="paintTipContainer container">
-        <label for="paintTip">Paint Style</label>
-        <select class="paintTip" id="paintTip" autocomplete="off">
-          <option value="round">Spray</option>
-          <option value="square">Brush</option>
-        </select>
-      </section>
-      <button type="button" class="savePopupButton" onClick="app.openSavePopup()">'Gram It</button>
-    </aside>
-  </div>
-  <script src="app.js"></script>
+  
 </body>
 </html>
