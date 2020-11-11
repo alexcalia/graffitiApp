@@ -14,35 +14,31 @@ body,
   font-family: 'Sedgwick Ave Display', cursive;
   font-size: 20px;
   color: #5C0200;
+  text-align: center;
 }
 
 .wrapper {
   max-width: 1400px;
   margin: 0 auto;
   width: 90%;
-  display: flex;
   padding-top: 50px;
 }
 
 h1 {
   font-size: 50px;
-  text-align: center;
   font-family: 'Sedgwick Ave Display', cursive;
   margin-top: 50px;
 }
 
 h2 {
-  text-align: center;
   font-size: 30px;
 }
 
 h3 {
-  text-align: center;
   margin-bottom: 5px;
 }
 
 label {
-  text-align: center;
   margin-bottom: 8px;
 }
 
@@ -68,6 +64,60 @@ select{
   font-size: 16px;
   border: 2px solid #5C0200;
   border-radius: 3px;
+}
+
+/**************************/
+/*      SPLASH PAGE       */
+/**************************/
+.splashBody {
+  font-family: sans-serif;
+}
+
+.splashHeader {
+  font-family: 'Sedgwick Ave Display', cursive;
+}
+
+.splashWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+article p {
+  width: 400px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.optionsImageContainer {
+  justify-content: space-evenly;
+}
+
+img {
+  width: 100%;
+}
+
+.imageWrapper {
+  width: 300px;
+  border: 2px solid #5C0200;
+  border-radius: 3px;
+}
+
+.optionsImageWrapper {
+  width: 125px;
+  border: 2px solid #5C0200;
+  border-radius: 3px;
+}
+
+/**************************/
+/*      APP STYLING       */
+/**************************/
+/* GENERAL STYLINGS */
+.appWrapper {
+  display: flex;
 }
 
 /* CANVAS */
