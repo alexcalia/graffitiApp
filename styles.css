@@ -258,6 +258,7 @@ aside {
 
 .savePopup {
   position: relative;
+  max-width: 825px;
   width: 43%;
   margin: 0 auto;
   padding: 20px;
