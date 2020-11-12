@@ -75,6 +75,8 @@ select{
 .splashBody header p {
   font-size: 30px;
   margin-bottom: 50px;
+  letter-spacing: 1.1px;
+  line-height: 1.1;
 }
 
 .splashMainHeader {
@@ -107,6 +109,8 @@ article h3 {
 article p {
   width: 600px;
   margin: 20px auto;
+  letter-spacing: 1.1px;
+  line-height: 1.1;
 }
 
 .introSection {
