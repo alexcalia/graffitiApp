@@ -1,4 +1,4 @@
-# graffitigram
+# GraffitiGram
 
 Mintbean Hackathion Project.
 
