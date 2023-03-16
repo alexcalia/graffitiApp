@@ -2,6 +2,6 @@
 
 Mintbean Hackathion Project.
 
-Tech Stack: HTMl, CSS, JavaScript
+Tech Stack: HTML, CSS, JavaScript
 
-Draw on a canvas element, apply filters to your drawing and save an imgae of it locally.
+Draw on a canvas element, apply filters to your drawing and save an image of it locally.
